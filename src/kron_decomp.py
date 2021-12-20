@@ -1,18 +1,5 @@
 import numpy as np
 
-def times_two_matrix(U, V):
-    """
-    Claculate the coefficient a, s.t. U = a V
-    """
-    assert U.shape == V.shape, "input matrices should have the same dimension"
-    idx1 = np.flatnonzero(U.round(6))  # cut to some precision
-    idx2 = np.flatnonzero(V.round(6))
-    try:
-        if np.allclose(idx1, idx2):
-            return U.ravel()[idx1[0]] / V.ravel()[idx2[0]]
-    except:
-        return None
-
 
 def kron_decomp(U):
     """
